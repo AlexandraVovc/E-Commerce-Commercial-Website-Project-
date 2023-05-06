@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteBase /
+
+RewriteRule ^/(([a-z]+)/([a-z]+)/(.*))$ index.php?resource=user&action=home [QSA,L]
