@@ -3,7 +3,7 @@ namespace controllers;
 
 require(dirname(__DIR__)."/models/cart.php");
 
-class UserController{
+class CartController{
 
     function __construct(){
 
@@ -33,7 +33,7 @@ class UserController{
                     }
 
                 }else if($action == 'deleteFromCart'){
-                    $this->cart->delete($cart_id,$_SESSION['user_id']);
+                    $this->cart->delete($_SESSION['cart_id'], $_SESSION['user_id']);
                 }
 
                 if(class_exists($viewClass)){

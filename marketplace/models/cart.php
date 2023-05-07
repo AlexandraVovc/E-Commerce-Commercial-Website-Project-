@@ -29,7 +29,7 @@ class Cart{
     }
     public function getProductId(){
 
-        return $product_id->product_id;
+        return $this->product_id;
 
     }
 
