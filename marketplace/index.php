@@ -21,6 +21,7 @@ class App{
 
                 $controllerClass = "\\controllers\\".ucfirst($resource)."Controller";
 
+
                 if(class_exists($controllerClass)){
                     $controller = new $controllerClass();
 

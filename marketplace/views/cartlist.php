@@ -1,9 +1,11 @@
-<?php namespace views; 
-include('includes/header.php');
-require_once('core/membershipprovider.php');
+<?php
+    namespace views;
+    include('includes/header.php');
+    require_once('core/membershipprovider.php');
 ?>
 
-<head>
+<html>
+    <head>
      <title>Cart</title>
      <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -31,8 +33,9 @@ require_once('core/membershipprovider.php');
                   </div>
                   <hr class="my-4">
 
-                  <?php 
-    class UserCart{
+    <?php 
+    class CartList{
+      
         private $user;
         function __construct($user){
         $this->user = $user;
@@ -42,9 +45,8 @@ require_once('core/membershipprovider.php');
         }
 
         function render(...$data){
-        $products = $data[0];?>
-
-        <?php
+        $products = $data[0];
+        
         foreach($products as $item){?>
 
         <?php
@@ -59,10 +61,9 @@ require_once('core/membershipprovider.php');
                 
               }else{
                 $cartItems = 0;
-              }
-            }
-        }
-    }?>
+              }?>
+            
+    
 
                   <div class="row mb-4 d-flex justify-content-between align-items-center">
                     <div class="col-md-2 col-lg-2 col-xl-2">
@@ -96,12 +97,14 @@ require_once('core/membershipprovider.php');
                       <a href="/User/deleteFromCart/<?=$item->cart_id?>" class="text-muted"><i class="bi bi-x-lg"></i></a>
                     </div>
                   </div>
-
                   <hr class="my-4">
-                  <?php }?>
+           <?php
+                }
+              }
+    }?>
                   
                   <div class="pt-5">
-                    <h6 class="mb-0"><a href="/Main/index" class="text-body"><i
+                    <h6 class="mb-0"><a href="index.php?resource=user&action=home" class="text-body"><i
                           class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
                   </div>
                 </div>
@@ -177,5 +180,5 @@ require_once('core/membershipprovider.php');
 
 <script>
 
-</body>
+    </body>
 </html>

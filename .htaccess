@@ -2,4 +2,4 @@ RewriteEngine On
 
 RewriteBase /
 
-RewriteRule ^/(([a-z]+)/([a-z]+)/(.*))$ index.php?resource=user&action=home [QSA,L]
+RewriteRule ^\/([A-Za-z]+)\/([A-Za-z]+) index.php?resource=$1&action=$2 [QSA,L]

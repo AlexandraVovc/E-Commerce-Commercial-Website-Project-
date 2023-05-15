@@ -29,21 +29,25 @@
 
         <?php }?>
         
-        <?php if(isset($_COOKIE['marketplaceuser']) || isset($_SESSION['seller_id'])) {?>
+        <?php if(isset($_COOKIE['user'])){?>
         <li class="nav-item">
           <a class="nav-link" href="index.php?action=logout&resource=user"><?=_("Logout")?></a>
         </li>
+        <?php }else if (isset($_COOKIE['seller'])){?>
+          <a class="nav-link" href="index.php?action=logout&resource=seller"><?=_("Logout")?></a>
         <?php }else{?>
-          
-        <?php }?>
-        
-        <?php if(isset($_COOKIE['marketplaceuser']) || isset($_SESSION['seller_id'])) {?>
-        <li class="nav-item">
-          <a class="nav-link disabled "><?=_("Welcome")?> <?= $_COOKIE['marketplacefname']?></a>
-        </li>
-        <?php }else{?>
-
+            
           <?php }?>
+        
+        <?php if(isset($_COOKIE['user'])) {?>
+        <li class="nav-item">
+          <a class="nav-link disabled "><?=_("Welcome")?> <?= $_COOKIE['userfname']?></a>
+        </li>
+        <?php }else if(isset($_COOKIE['seller'])){?>
+          <a class="nav-link disabled "><?=_("Welcome")?> <?= $_COOKIE['sellerfname']?></a>
+          <?php }else{?>
+            
+            <?php }?>
       </ul>
 
       <form class="d-flex" role="search">
@@ -59,13 +63,13 @@
         <a class="btn btn-primary m-2" href="index.php?action=login&resource=user"><?=_("Sign in")?></a>
       <?php }?>
 
-      <?php if(isset($_COOKIE['marketplaceuser'])){?>
-      <a class="btn btn-outline-light btn-floating m-1" href="index.php?action=cart&resource=cart" id="cartBtn" href="" role="button">
+      <?php if(isset($_COOKIE['user'])){?>
+      <a class="btn btn-outline-light btn-floating m-1" id="cartBtn" href="index.php?resource=user&action=cart" role="button">
         <i class="bi bi-cart-fill pe-2"></i>
         <span class='badge badge-warning' id='lblCartCount' name="cartNb" ></span>
         <!-- <?= $cartItems?> -->
       </a>
-      <?php } if(isset($_SESSION['seller_id'])) {?>
+      <?php } if(isset($_SESSION['seller'])) {?>
         <a class="btn btn-outline-light btn-floating p-2" id="cartBtn" href="" role="button">
           <i class="bi bi-bag-fill"></i>
       </a>

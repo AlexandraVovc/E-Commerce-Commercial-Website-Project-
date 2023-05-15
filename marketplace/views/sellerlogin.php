@@ -10,8 +10,8 @@ class SellerLogin{
 
         if($this->seller->login()){
             
-            $this->seller->getMembershipProvider()->login();
-            header('Location:index.php?resource=seller&action=home');
+            $this->seller->getMembershipProvider()->sellerLogin();
+            header('Location:index.php?resource=user&action=home');
 
         }else{
             $this->message =  'Invalid credentials';

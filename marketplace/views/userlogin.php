@@ -10,7 +10,7 @@ class UserLogin{
 
         if($this->user->login()){
             
-            $this->user->getMembershipProvider()->login();
+            $this->user->getMembershipProvider()->userLogin();
             header('Location:index.php?resource=user&action=home');
 
         }else{

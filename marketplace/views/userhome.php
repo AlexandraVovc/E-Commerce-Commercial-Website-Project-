@@ -59,7 +59,7 @@ class UserHome{
                             
                         </div>
                         <div class="d-flex justify-content-between total font-weight-bold mt-4">
-                            <?php if(isset($_COOKIE['marketplaceuser'])) {?>
+                            <?php if(isset($_COOKIE['user'])) {?>
                                 <span><a href="" class="btn btn-success"><?=_('Add to cart')?></a> <a href="" class="btn btn-outline-warning p-2"><i class="bi bi-pencil-fill"></i></a ></span><span>$<?php echo $item['price'] ?></span>
                             <?php }else{?>
                                 <span><a href="#" class="btn btn-light disabled"><?=_('Add to cart')?></a></span><span>$<?php echo $item['price'] ?></span>
